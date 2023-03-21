@@ -9,6 +9,7 @@ export const App = () => {
   const sendData = () => {
     axios.get(`${SERVER_ADDRESS}`, {
       params: {
+        command: "print",
         company: companyName,
         productName,
         price,
