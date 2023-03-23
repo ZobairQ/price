@@ -23,7 +23,7 @@ export const App = () => {
     .catch(function (error) {
       // handle error
       console.log(error);
-    });;
+    });
   };
   return (
     <ChakraProvider theme={theme}>
