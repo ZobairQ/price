@@ -7,14 +7,23 @@ export const App = () => {
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
   const sendData = () => {
-    axios.get(`${SERVER_ADDRESS}`, {
+    axios.get(`http://${SERVER_ADDRESS}`, {
       params: {
         command: "print",
         company: companyName,
         productName,
         price,
       },
-    });
+    }).then(function (response) {
+      // handle success
+      setCompanyName("");
+      setPrice("");
+      setProductName("");
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });;
   };
   return (
     <ChakraProvider theme={theme}>
